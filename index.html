@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nathan Larose | Portfolio</title>
+
+    <link rel="stylesheet" href="styles/main.css" />
+
+    <script src="scripts/main.js" defer></script>
+</head>
+
+<body data-component="Ball">
+    <div class="page-transition" data-component="PageTransition">
+        <div class="page-transition__rect"></div>
+        <div class="page-transition__rect"></div>
+        <div class="page-transition__rect"></div>
+        <div class="page-transition__rect"></div>
+    </div>
+
+    <div class="cursor">
+        <div class="cursor__ball">
+            <div class="cursor__ball-text">
+                <span class="cursor__ball-text-span"></span>
+            </div>
+        </div>
+    </div>
+
+    <header class="header" data-component="Header" data-threshold="0.1">
+        <nav class="nav-primary">
+            <ul class="nav__menu">
+                <li>
+                    <a href="index.html" class="nav__item">Moi</a>
+                </li>
+                <li>
+                    <a href="projets.html" class="nav__item">Projets</a>
+                </li>
+            </ul>
+        </nav>
+
+        <a class="nav__email">nathanlarose07@gmail.com</a>
+
+        <nav class="nav__contact">
+            <a class="nav__item invisible" href="#">WBWBWNN</a>
+            <li>
+                <a class="nav__item" href="#">On jase</a>
+            </li>
+
+        </nav>
+
+        <button class="header__toggle js-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+
+
+    <div class="hero">
+        <div class="hero__content">
+            <div class="wrapper">
+                <span></span>
+                <h1 class="h1-big">Nathan Larose</h1>
+
+                <div class="hero__information">
+                    <p>Recherche de stage en desing UX</p>
+                    <p>Designer d’exprériances et d’interfaces spécialisé dans le web</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero__media">
+            <img src="assets/images/hero__nathan.jpg" alt="" />
+        </div>
+    </div>
+
+    <div class="hub">
+        <div class="wrapper">
+            <ul class="hub__information">
+                <li>
+                    <a href="projets.html" data-interactive data-cursor-text="Voir plus">
+                        <svg class="icon icons-lg hub--icons">
+                            <use xlink:href="#icon-folders"></use>
+                        </svg>
+                        Mes projets
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/nathan-larose-013556300/" data-interactive data-cursor-text="Voir plus">
+                        <svg class="icon icons-lg hub--icons">
+                            <use xlink:href="#icon-Linkedin"></use>
+                        </svg>
+                        Linkedin
+                    </a>
+                </li>
+                <li>
+                    <a href="assets/images/CV_nathan_larose_2026.pdf" download="" data-interactive data-cursor-text="Voir plus">
+                        <svg class="icon icons-lg hub--icons">
+                            <use xlink:href="#icon-download"></use>
+                        </svg>
+                        CV
+                    </a>
+                </li>
+                <li>
+                    <a href="mailto:nathanlarose07@gmail.con" data-interactive data-cursor-text="Voir plus">
+                        <svg class="icon icons-lg hub--icons">
+                            <use xlink:href="#icon-contact"></use>
+                        </svg>
+                        Contact
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="hover-image larger" data-hover="jeux_video"><img src="assets/images/jeux_video.jpg" /></div>
+    <div class="hover-image" data-hover="arts_plastiques"><img src="assets/images/arts_plastique.jpg" /></div>
+    <div class="hover-image" data-hover="amies"><img src="assets/images/amies.jpg" /></div>
+    <div class="hover-image" data-hover="grandeur_nature"><img src="assets/images/grandeur_nature.jpg" /></div>
+
+    <section class="passions" data-component="HoverImage">
+        <div class="wrapper">
+            <div class="intro-text">
+                <h2 class="hero-text">
+                    <span class="normal-text">Au-delà du design :</span>
+                    <span class="hover-text hover--bleu" data-hover="jeux_video">jeux vidéo</span>
+                    <span class="normal-text">,</span>
+                    <span class="hover-text hover--rose" data-hover="amies">amis</span>
+                    <span class="normal-text">,</span>
+                    <span class="hover-text hover--jaune" data-hover="grandeur_nature">grandeur nature</span>
+                    <span class="normal-text">et</span>
+                    <span class="hover-text hover--vert" data-hover="arts_plastiques">arts plastiques</span>
+                    <span class="normal-text">, mes intérêts façonnent ma perception et mon approche de la vie.</span>
+                </h2>
+            </div>
+        </div>
+    </section>
+
+    <section class="outils">
+        <div class="wrapper">
+            <div class="titre" data-component="HighlightText">
+                <h3>Mes outils</h3>
+                <p>
+                    Je maîtrise
+                    <span class="highlight highlight--bleu">
+                        <span class="highlight-bg"></span>
+                        différents
+                    </span>
+                    outils et langages pour créer des
+                    <span class="highlight highlight--rose">
+                        <span class="highlight-bg"></span>
+                        expériences numériques
+                    </span>
+                    .
+                </p>
+            </div>
+        </div>
+        <div class="">
+            <div class="wrapper">
+                <div class="outil listes labels">
+                    <p>nombre</p>
+                    <p>outils</p>
+                    <p>niveau</p>
+                    <p>en gros</p>
+                </div>
+            </div>
+        </div>
+        <div class="full__outil bleu">
+            <div class="wrapper">
+                <div class="outil listes">
+                    <h3>01</h3>
+                    <h4>Blender</h4>
+                    <h4>Novice</h4>
+                    <p>Création et modélisation d’objets et environnements 3D.</p>
+                </div>
+            </div>
+        </div>
+        <div class="full__outil pink">
+            <div class="wrapper">
+                <div class="outil listes">
+                    <h3>02</h3>
+                    <h4>Responsive</h4>
+                    <h4>Pro</h4>
+                    <p>Adaptation des interfaces aux différentes tailles d’écran.</p>
+                </div>
+            </div>
+        </div>
+        <div class="full__outil vert">
+            <div class="wrapper">
+                <div class="outil listes">
+                    <h3>03</h3>
+                    <h4>Figma</h4>
+                    <h4>Expert</h4>
+                    <p>Conception de maquettes et prototypes interactifs.</p>
+                </div>
+            </div>
+        </div>
+        <div class="full__outil bleu">
+            <div class="wrapper">
+                <div class="outil listes">
+                    <h3>04</h3>
+                    <h4>After Effect</h4>
+                    <h4>Novice</h4>
+                    <p>Création d’animations et d’effets visuels dynamiques.</p>
+                </div>
+            </div>
+        </div>
+        <div class="full__outil jaune">
+            <div class="wrapper">
+                <div class="outil listes">
+                    <h3>05</h3>
+                    <h4>Html</h4>
+                    <h4>Expert</h4>
+                    <p>Structuration et création de contenu des pages web.</p>
+                </div>
+            </div>
+        </div>
+        <div class="full__outil pink">
+            <div class="wrapper">
+                <div class="outil listes">
+                    <h3>06</h3>
+                    <h4>Css/Scss</h4>
+                    <h4>Pro</h4>
+                    <p>Mise en forme et personnalisation visuelle des sites web.</p>
+                </div>
+            </div>
+        </div>
+        <div class="full__outil vert">
+            <div class="wrapper">
+                <div class="outil listes">
+                    <h3>07</h3>
+                    <h4>JavaScript</h4>
+                    <h4>Novice</h4>
+                    <p>Programmation d’interactions et de fonctionnalités web.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cheminement" data-component="Timeline">
+        <div class="wrapper">
+            <div class="titre" data-component="HighlightText">
+                <h3>Mon cheminement</h3>
+                <p>
+                    Mon parcours m’a progressivement mené vers le
+                    <span class="highlight highlight--bleu">
+                        <span class="highlight-bg"></span>
+                        design numérique
+                    </span>
+                    , en passant par le
+                    <span class="highlight highlight--rose">
+                        <span class="highlight-bg"></span>
+                        secondaire
+                    </span>
+                    , la
+                    <span class="highlight highlight--vert">
+                        <span class="highlight-bg"></span>
+                        TIM
+                    </span>
+                    , la
+                    <span class="highlight highlight--jaune">
+                        <span class="highlight-bg"></span>
+                        robotique
+                    </span>
+                    et différents projets créatifs.
+                </p>
+            </div>
+        </div>
+        <div class="scroller">
+            <div class="stage">
+                <div class="photo">
+                    <img id="photoImg" src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1200&auto=format&fit=crop" alt="Photo associée à l'étape active" />
+                </div>
+
+                <div class="rail">
+                    <div class="progress">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+
+                    <div class="point">
+                        <img class="point-img" src="assets/images/enfance.jpg" alt="" hidden />
+                        <h3 class="year">2007</h3>
+                        <div>
+                            <h4>Le début de l'aventure</h4>
+                            <p>Ma naissance, le point de départ de mon parcours.</p>
+                        </div>
+                    </div>
+
+                    <div class="point">
+                        <img class="point-img" src="assets/images/decouverte.jpg" alt="" hidden />
+                        <h3 class="year">2022</h3>
+                        <div>
+                            <h4>La découverte du web</h4>
+                            <p>Je découvre ma passion pour le web et le design.</p>
+                        </div>
+                    </div>
+
+                    <div class="point">
+                        <img class="point-img" src="assets/images/graduation.jpg" alt="" hidden />
+                        <h3 class="year">2024</h3>
+                        <div>
+                            <h4>Graduation secondaire</h4>
+                            <p>Je termine mon secondaire et je fais mon début au cégep.</p>
+                        </div>
+                    </div>
+
+                    <div class="point">
+                        <img class="point-img" src="assets/images/stage.jpg" alt="" hidden />
+                        <h3 class="year">2026</h3>
+                        <div>
+                            <h4>Recherche de stage</h4>
+                            <p>Développement de mes compétences en web, design UX/UI et multimédia.</p>
+                        </div>
+                    </div>
+
+                    <div class="point">
+                        <img class="point-img" src="assets/images/université.jpg" alt="" hidden />
+                        <h3 class="year">2027</h3>
+                        <div>
+                            <h4>BAC en UX à l'ÉTS</h4>
+                            <p>Je développe mon portfolio et j'explore de nouvelles possibilités en UX.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="philosophie listes">
+        <div class="wrapper">
+            <div class="titre" data-component="HighlightText">
+                <h3>Ma philosophie</h3>
+                <p>
+                    Je travaille avec
+                    <span class="highlight highlight--bleu">
+                        <span class="highlight-bg"></span>
+                        curiosité
+                    </span>
+                    ,
+                    <span class="highlight highlight--rose">
+                        <span class="highlight-bg"></span>
+                        ouverture et collaboration
+                    </span>
+                    . J’aime
+                    <span class="highlight highlight--vert">
+                        <span class="highlight-bg"></span>
+                        comprendre les besoins
+                    </span>
+                    ,
+                    <span class="highlight highlight--jaune">
+                        <span class="highlight-bg"></span>
+                        partager mes idées
+                    </span>
+                    et trouver des
+                    <span class="highlight highlight--bleu">
+                        <span class="highlight-bg"></span>
+                        solutions créatives
+                    </span>
+                    tout en restant
+                    <span class="highlight highlight--rose">
+                        <span class="highlight-bg"></span>
+                        organisé
+                    </span>
+                    et
+                    <span class="highlight highlight--vert">
+                        <span class="highlight-bg"></span>
+                        adaptable
+                    </span>
+                    .
+                </p>
+            </div>
+        </div>
+
+        <div class="wrapper">
+            <div class="soft listes labels">
+                <p>nombre</p>
+                <p>sortes</p>
+                <p>en gros</p>
+            </div>
+        </div>
+        <div class="full__soft bleu">
+            <div class="wrapper">
+                <div class="soft listes">
+                    <h3>01</h3>
+                    <h4>Communication</h4>
+                    <p>Exprimer mes idées clairement et collaborer efficacement avec les autres.</p>
+                </div>
+            </div>
+        </div>
+        <div class="full__soft pink">
+            <div class="wrapper">
+                <div class="soft listes">
+                    <h3>02</h3>
+                    <h4>Ouverture d’esprit</h4>
+                    <p>Exprimer mes idées clairement et collaborer efficacement avec les autres.</p>
+                </div>
+            </div>
+        </div>
+        <div class="full__soft vert">
+            <div class="wrapper">
+                <div class="soft listes">
+                    <h3>03</h3>
+                    <h4>Organisation</h4>
+                    <p>Structurer mon travail et gérer efficacement mes priorités et mes échéances.</p>
+                </div>
+            </div>
+        </div>
+        <div class="full__soft bleu">
+            <div class="wrapper">
+                <div class="soft listes">
+                    <h3>04</h3>
+                    <h4>Patience</h4>
+                    <p>Prendre le temps de comprendre, apprendre et avancer sans me précipiter.</p>
+                </div>
+            </div>
+        </div>
+        <div class="full__soft jaune">
+            <div class="wrapper">
+                <div class="soft listes">
+                    <h3>05</h3>
+                    <h4>Leadership</h4>
+                    <p>Guider un groupe, prendre des initiatives et encourager la collaboration.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="realisation">
+        <div class="wrapper">
+            <div class="titre" data-component="HighlightText">
+                <h3>Mes réalisations</h3>
+                <p>
+                    Mes projets reflètent mon
+                    <span class="highlight highlight--bleu">
+                        <span class="highlight-bg"></span>
+                        parcours
+                    </span>
+                    , ma
+                    <span class="highlight highlight--rose">
+                        <span class="highlight-bg"></span>
+                        créativité
+                    </span>
+                    et mes apprentissages en design. Découvrez davantage de mes réalisations et de mon
+                    <span class="highlight highlight--vert">
+                        <span class="highlight-bg"></span>
+                        évolution
+                    </span>
+                    sur ma page Projets.
+                </p>
+            </div>
+        </div>
+
+        <div class="cards">
+            <div class="card">
+                <div class="card__media">
+                    <img src="assets/images/dynamiques_cover.jpg" alt="" />
+                </div>
+
+                <div class="card__content">
+                    <h3>2024</h3>
+                    <p>Développement de l’image de marque des Dynamiques 9624</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card__media">
+                    <img src="assets/images/dynamiques_cover.jpg" alt="" />
+                </div>
+
+                <div class="card__content">
+                    <h3>2026</h3>
+                    <p>Création de l’identité visuelle de Bourgeon</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card__media">
+                    <img src="assets/images/dynamiques_cover.jpg" alt="" />
+                </div>
+
+                <div class="card__content">
+                    <h3>2026</h3>
+                    <p>Refonte et intégration du site de boxotel</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="wrapper">
+            <h2>On n'en reste pas là ?</h2>
+            <p>Ce projet a été réalisé dans le cadre de mon portfolio afin de créer une identité visuelle qui représente</p>
+
+            <div class="buttons">
+                <a class="button secondary" href="projets.html" data-interactive data-cursor-text="Voir plus">Voir mes projets</a>
+                <a class="button primary" href="projets.html" data-interactive data-cursor-text="Voir plus">Prendre un café</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="wrapper grids">
+            <div class="grid footer__contact">
+                <p>Dites bonjour</p>
+                <h4>nathanlarose07@gmail.com</h4>
+                <h4>+1 (438)-765-7951</h4>
+            </div>
+
+            <div class="grid footer__localisation">
+                <p>Où me trouver</p>
+                <a class="h4" data-interactive data-cursor-text="Me trouver">Le Vieux-Longueuil, <br> Longueuil, QC</a>
+            </div>
+
+            <div class="grid footer__media">
+                <p>Me suivre</p>
+                <a class="h4" href="#" data-interactive data-cursor-text="Voir plus">
+                    Instagram
+                </a>
+                <a class="h4" href="https://www.linkedin.com/in/nathan-larose-013556300/" data-interactive data-cursor-text="Voir plus">
+                    Linkedin
+                </a>
+                <a class="h4" href="assets/images/CV_nathan_larose_2026.pdf" download="" data-interactive data-cursor-text="Voir plus">
+                    Coriculum vitae
+                </a>
+
+            </div>
+
+
+        </div>
+        <div class="wrapper declaration">
+            <p class="p-small">
+                J’ai utilisé une intelligence artificielle uniquement pour corriger l’orthographe, la grammaire et la formulation de mes textes. Les idées et le
+                contenu du travail sont les miens.
+            </p>
+        </div>
+    </footer>
+
+    </div>
+    </div>
+</body>
+
+</html>

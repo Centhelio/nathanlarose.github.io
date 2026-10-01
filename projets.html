@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nathan Larose | Portfolio</title>
+
+    <link rel="stylesheet" href="styles/main.css" />
+
+    <script src="scripts/main.js" defer></script>
+</head>
+
+<body data-component="Ball">
+    <div class="page-transition" data-component="PageTransition">
+        <div class="page-transition__rect"></div>
+        <div class="page-transition__rect"></div>
+        <div class="page-transition__rect"></div>
+        <div class="page-transition__rect"></div>
+    </div>
+
+    <div class="cursor">
+        <div class="cursor__ball">
+            <div class="cursor__ball-text">
+                <span class="cursor__ball-text-span"></span>
+            </div>
+        </div>
+    </div>
+
+    <header class="header" data-component="Header" data-threshold="0.1">
+        <nav class="nav-primary">
+            <ul class="nav__menu">
+                <li>
+                    <a href="index.html" class="nav__item">Moi</a>
+                </li>
+                <li>
+                    <a href="projets.html" class="nav__item">Projets</a>
+                </li>
+            </ul>
+        </nav>
+
+        <a class="nav__email">nathanlarose07@gmail.com</a>
+
+        <nav class="nav__contact">
+            <a class="nav__item invisible" href="#">WBWBWNN</a>
+            <li>
+                <a class="nav__item" href="#">On jase</a>
+            </li>
+
+        </nav>
+
+        <button class="header__toggle js-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+
+
+    <div class="hover-image" data-hover="dynamiques"><img src="assets/images/preview-dynamiques.jpg"></div>
+    <div class="hover-image" data-hover="boxotel"><img src="assets/images/preview-boxotel.jpg"></div>
+    <div class="hover-image" data-hover="bourgeon"><img src="assets/images/preview-bourgeon.jpg"></div>
+    <div class="hover-image" data-hover="timflix"><img src="assets/images/preview-timflix.jpg"></div>
+    <div class="hover-image" data-hover="citronade"><img src="assets/images/preview-orengade.jpg"></div>
+
+
+
+    <section class="projets" data-component="HoverImage">
+        <div class="wrapper">
+            <div class="titre" data-component="HighlightText">
+                <h1>Mes projets</h1>
+            </div>
+        </div>
+        <div class="">
+            <div class="wrapper">
+                <div class="projet listes labels">
+                    <p>année</p>
+                    <p>titre</p>
+                    <p>en gros</p>
+                </div>
+            </div>
+        </div>
+        <div class="full__projet vert">
+            <div class="wrapper">
+                <a class="projet listes hover-text" data-hover="dynamiques">
+                    <h3>2024</h3>
+                    <h4>Développement de l’image de marque des Dynamiques 9624</h4>
+                    <p>Projet de robotique internationale qui vise les jeunes étudiants passionnés par les sciences. Le projet était conçu pour être présenté aux commanditaires, aux juges et aux élèves.</p>
+                </a>
+            </div>
+        </div>
+        <div class="full__projet jaune">
+            <div class="wrapper">
+                <a class="projet listes hover-text" data-hover="boxotel">
+                    <h3>2026</h3>
+                    <h4>Refonte et intégration du site de boxotel</h4>
+                    <p>Refonte d’un site hôtelier qui ne reflétait pas les services qu’il vendait et optimisation du flux de navigation et du positionnement des informations. </p>
+                </a>
+            </div>
+        </div>
+        <div class="full__projet vert">
+            <div class="wrapper">
+                <a class="projet listes hover-text" data-hover="bourgeon">
+                    <h3>2026</h3>
+                    <h4>Création de l’identité visuelle de Bourgeon</h4>
+                    <p>Nous devions créer une entreprise qui offrait des services de rebranding, visant les sites web, les images de marque ou tout autre mandat nécessitant une quelconque modernisation.</p>
+                </a>
+            </div>
+        </div>
+        <div class="full__projet pink">
+            <div class="wrapper">
+                <a class="projet listes hover-text" href="projet-timflix.html" data-hover="timflix">
+                    <h3>2024</h3>
+                    <h4>Desing UI/UX d’une application de cinéma</h4>
+                    <p>Nous devions créer une entreprise qui offrait des services de rebranding, visant les sites web, les images de marque ou tout autre mandat nécessitant une quelconque modernisation.</p>
+                </a>
+            </div>
+        </div>
+        <div class="full__projet jaune">
+            <div class="wrapper">
+                <a class="projet listes hover-text" data-hover="citronade">
+                    <h3>2025</h3>
+                    <h4>Concevoir et réaliser une expérience web interactive</h4>
+                    <p>Nous devions créer une entreprise offrant des services de rebranding pour moderniser des sites web, des images de marque ou tout autre projet.</p>
+                </a>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="wrapper">
+            <h2>On n'en reste pas là ?</h2>
+            <p>Ce projet a été réalisé dans le cadre de mon portfolio afin de créer une identité visuelle qui représente</p>
+
+            <div class="buttons">
+                <a class="button secondary" href="projets.html" data-interactive data-cursor-text="Voir plus">Voir mes projets</a>
+                <a class="button primary" href="projets.html" data-interactive data-cursor-text="Voir plus">Prendre un café</a>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="footer">
+        <div class="wrapper grids">
+            <div class="grid footer__contact">
+                <p>Dites bonjour</p>
+                <h4>nathanlarose07@gmail.com</h4>
+                <h4>+1 (438)-765-7951</h4>
+            </div>
+
+            <div class="grid footer__localisation">
+                <p>Où me trouver</p>
+                <a class="h4" data-interactive data-cursor-text="Me trouver">Le Vieux-Longueuil, <br> Longueuil, QC</a>
+            </div>
+
+            <div class="grid footer__media">
+                <p>Me suivre</p>
+                <a class="h4" href="#" data-interactive data-cursor-text="Voir plus">
+                    Instagram
+                </a>
+                <a class="h4" href="https://www.linkedin.com/in/nathan-larose-013556300/" data-interactive data-cursor-text="Voir plus">
+                    Linkedin
+                </a>
+                <a class="h4" href="assets/images/CV_nathan_larose_2026.pdf" download="" data-interactive data-cursor-text="Voir plus">
+                    Coriculum vitae
+                </a>
+
+            </div>
+
+
+        </div>
+        <div class="wrapper declaration">
+            <p class="p-small">
+                J’ai utilisé une intelligence artificielle uniquement pour corriger l’orthographe, la grammaire et la formulation de mes textes. Les idées et le
+                contenu du travail sont les miens.
+            </p>
+        </div>
+    </footer>
+
+    </div>
+    </div>
+</body>
+
+</html>
