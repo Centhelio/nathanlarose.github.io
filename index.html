@@ -9,6 +9,13 @@
     <link rel="stylesheet" href="styles/main.css" />
 
     <script src="scripts/main.js" defer></script>
+
+    <!-- Favicon link -->
+    <link rel="icon" type="image/png" href="assets/images/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="assets/images/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="assets/images/favicon/site.webmanifest" />
 </head>
 
 <body data-component="Ball">
@@ -58,21 +65,33 @@
 
 
 
-    <div class="hero">
-        <div class="hero__content">
-            <div class="wrapper">
-                <span></span>
-                <h1 class="h1-big">Nathan Larose</h1>
+    <div data-component="Scroller">
+        <div class="hero js-horiz">
+            <div class="hero__content js-panel">
+                <div class="wrapper">
+                    <span></span>
+                    <h1 class="h1-big">Nathan Larose</h1>
 
-                <div class="hero__information">
-                    <p>Recherche de stage en desing UX</p>
-                    <p>Designer d’exprériances et d’interfaces spécialisé dans le web</p>
+                    <div class="hero__information">
+                        <p>Recherche de stage en desing UX</p>
+                        <p>
+                            Designer
+                            <span class="highlight highlight--rose">
+                                <span class="highlight-bg"></span>
+                                d’exprériances et d’interfaces
+                            </span>
+                            spécialisé dans le web
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="hero__media">
-            <img src="assets/images/hero__nathan.jpg" alt="" />
+            <div class="hero__media js-panel">
+                <picture>
+                    <source media="(max-width: 768px)" srcset="assets/images/hero__nathan-mobile.jpg">
+                    <img src="assets/images/hero__nathan-desktop.jpg" alt="Portrait de Nathan Larose">
+                </picture>
+            </div>
         </div>
     </div>
 
@@ -90,7 +109,7 @@
                 <li>
                     <a href="https://www.linkedin.com/in/nathan-larose-013556300/" data-interactive data-cursor-text="Voir plus">
                         <svg class="icon icons-lg hub--icons">
-                            <use xlink:href="#icon-Linkedin"></use>
+                            <use xlink:href="#icon-linkedin"></use>
                         </svg>
                         Linkedin
                     </a>
@@ -151,9 +170,8 @@
                     outils et langages pour créer des
                     <span class="highlight highlight--rose">
                         <span class="highlight-bg"></span>
-                        expériences numériques
+                        expériences numériques.
                     </span>
-                    .
                 </p>
             </div>
         </div>
@@ -280,7 +298,7 @@
                     </div>
 
                     <div class="point">
-                        <img class="point-img" src="assets/images/enfance.jpg" alt="" hidden />
+                        <img class="point-img" src="assets/images/enfance.jpg" alt="Nathan enfant" hidden />
                         <h3 class="year">2007</h3>
                         <div>
                             <h4>Le début de l'aventure</h4>
@@ -289,7 +307,7 @@
                     </div>
 
                     <div class="point">
-                        <img class="point-img" src="assets/images/decouverte.jpg" alt="" hidden />
+                        <img class="point-img" src="assets/images/decouverte.jpg" alt="Nathan avec un trophé de web" hidden />
                         <h3 class="year">2022</h3>
                         <div>
                             <h4>La découverte du web</h4>
@@ -298,7 +316,7 @@
                     </div>
 
                     <div class="point">
-                        <img class="point-img" src="assets/images/graduation.jpg" alt="" hidden />
+                        <img class="point-img" src="assets/images/graduation.jpg" alt="Nathan à sa graduation" hidden />
                         <h3 class="year">2024</h3>
                         <div>
                             <h4>Graduation secondaire</h4>
@@ -307,7 +325,7 @@
                     </div>
 
                     <div class="point">
-                        <img class="point-img" src="assets/images/stage.jpg" alt="" hidden />
+                        <img class="point-img" src="assets/images/stage.jpg" alt="Recherche de stage" hidden />
                         <h3 class="year">2026</h3>
                         <div>
                             <h4>Recherche de stage</h4>
@@ -316,7 +334,7 @@
                     </div>
 
                     <div class="point">
-                        <img class="point-img" src="assets/images/université.jpg" alt="" hidden />
+                        <img class="point-img" src="assets/images/université.jpg" alt="Campus de l'ETS" hidden />
                         <h3 class="year">2027</h3>
                         <div>
                             <h4>BAC en UX à l'ÉTS</h4>
@@ -343,23 +361,8 @@
                         <span class="highlight-bg"></span>
                         ouverture et collaboration
                     </span>
-                    . J’aime
-                    <span class="highlight highlight--vert">
-                        <span class="highlight-bg"></span>
-                        comprendre les besoins
-                    </span>
-                    ,
+                    . J’aime comprendre les besoins, partager mes idées et trouver des solutions créatives tout en restant
                     <span class="highlight highlight--jaune">
-                        <span class="highlight-bg"></span>
-                        partager mes idées
-                    </span>
-                    et trouver des
-                    <span class="highlight highlight--bleu">
-                        <span class="highlight-bg"></span>
-                        solutions créatives
-                    </span>
-                    tout en restant
-                    <span class="highlight highlight--rose">
                         <span class="highlight-bg"></span>
                         organisé
                     </span>
@@ -453,38 +456,38 @@
         </div>
 
         <div class="cards">
-            <div class="card">
+            <a class="card" data-interactive data-cursor-text="Voir plus">
                 <div class="card__media">
-                    <img src="assets/images/dynamiques_cover.jpg" alt="" />
+                    <img src="assets/images/preview-dynamiques.jpg" alt="Mockup des dynamiques, carte d'affaire" />
                 </div>
 
-                <div class="card__content">
+                <div class="card__content pink">
                     <h3>2024</h3>
                     <p>Développement de l’image de marque des Dynamiques 9624</p>
                 </div>
-            </div>
+            </a>
 
-            <div class="card">
+            <a href="projet-timflix.html" class="card" data-interactive data-cursor-text="Voir plus">
                 <div class="card__media">
-                    <img src="assets/images/dynamiques_cover.jpg" alt="" />
+                    <img src="assets/images/preview-timflix.jpg" alt="Mockup de timflix, 2 téléphones" />
                 </div>
 
-                <div class="card__content">
+                <div class="card__content jaune">
+                    <h3>2024</h3>
+                    <p>Design UI/UX d'une application de cinéma</p>
+                </div>
+            </a>
+
+            <a class="card" data-interactive data-cursor-text="Voir plus">
+                <div class="card__media ">
+                    <img src="assets/images/preview-boxotel.jpg" alt="Mockup de Boxotel, 1 écran et 1 téléphone" />
+                </div>
+
+                <div class="card__content bleu">
                     <h3>2026</h3>
-                    <p>Création de l’identité visuelle de Bourgeon</p>
+                    <p>Refonte UX, UI et intégration du site de hôtelier Boxotel</p>
                 </div>
-            </div>
-
-            <div class="card">
-                <div class="card__media">
-                    <img src="assets/images/dynamiques_cover.jpg" alt="" />
-                </div>
-
-                <div class="card__content">
-                    <h3>2026</h3>
-                    <p>Refonte et intégration du site de boxotel</p>
-                </div>
-            </div>
+            </a>
         </div>
     </section>
 
