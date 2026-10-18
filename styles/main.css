@@ -1424,30 +1424,86 @@ a:hover {
 }
 
 /* ==========================================================================
-   Header
+   Header / component
+   Mobile first : menu plein écran (fond crème) + hub en bas, burger rond.
+   Desktop (>= $breakpoint-md) : navigation inline dans le header.
    ========================================================================== */
 .header {
   --header-height: 100px;
   width: 100%;
+  height: var(--header-height);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 var(--spacing-sm);
+  /* "fixed" : le header ne prend pas de place dans la page,
+     il suit le scroll et se cache au scroll vers le bas. */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  transition: transform 0.4s ease-out;
+  /* Fond du header : transparent tout en haut de la page,
+     puis il devient blanc pendant les 100 premiers px de scroll */
+}
+.header::before {
+  content: "";
   position: absolute;
   top: 0;
-  z-index: 99;
-  height: var(--header-height);
-  transition: transform 0.4s ease-out;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-white);
+  opacity: 0;
+  z-index: 2;
+}
+@supports (animation-timeline: scroll()) {
+  .header::before {
+    animation: header-bg-fade linear both;
+    animation-timeline: scroll(root block);
+    animation-range: 0 var(--header-height);
+  }
+}
+.header {
+  /* Menu mobile ouvert : le fond du header disparaît pour se fondre dans le menu */
+}
+.nav-is-active .header::before {
+  animation: none;
+  opacity: 0;
+}
+.header-is-hidden.is-scrolling-down:not(.nav-is-active) .header {
+  transform: translateY(-100%);
 }
 .header .nav__email {
-  mix-blend-mode: overlay;
+  background-color: var(--color-white);
   font-family: var(--font-primary);
   font-size: var(--font-size-h4);
   font-weight: 600;
 }
-.header ul {
+.header {
+  /* ---------- Hub (4 pastilles) ---------- */
+}
+.header .hub ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 0;
+  margin: 0;
+}
+.header .hub li {
+  list-style: none;
+}
+.header .hub a {
   display: flex;
-  gap: 40px;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-primary);
+  background-color: var(--color-bleu);
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+}
+.header {
+  /* ---------- Pastilles des listes (style desktop) ---------- */
 }
 .header li {
   position: relative;
@@ -1459,6 +1515,7 @@ a:hover {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  isolation: isolate; /* garde le ::before (z-index -1) visible au-dessus du fond du header */
 }
 .header li::before {
   content: "";
@@ -1470,60 +1527,113 @@ a:hover {
   transition: transform 0.4s ease;
   z-index: -1;
 }
-.header li:hover, .header li:active {
-  color: var(--color-primary);
-}
-.header li:hover::before, .header li:active::before {
-  transform: scale(1);
-}
 .header .nav__item {
   font-size: var(--font-size-nav);
   font-weight: 600;
   position: relative;
 }
-.header-is-hidden.is-scrolling-down:not(.nav-is-active) .header {
-  transform: translateY(-100%) translateY(4px);
+.header {
+  /* Desktop : 3 colonnes [logo | hub | menu]. Les colonnes latérales ont toujours
+     la même largeur (1fr), donc le hub reste centré dans la page. */
 }
 @media (width >= 1024px) {
   .header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: center;
     padding: 0 var(--spacing-md);
   }
 }
+.header {
+  /* ---------- Mobile / tablette : liens du menu + hub ---------- */
+}
 @media (width <= 1024px) {
-  .header li {
-    width: 100%;
+  .header {
+    /* Liens "Moi" / "Projets" : grands, alignés à gauche */
+  }
+  .header .nav__menu li {
+    width: auto;
     height: auto;
+    justify-content: flex-start;
+    overflow: visible;
   }
-  .header li::before {
-    background-color: none;
+  .header .nav__menu li::before {
+    background-color: transparent;
   }
-  .header .nav__item {
-    font-size: var(--font-size-h2) !important;
+  .header .nav__menu .nav__item {
+    font-size: var(--font-size-h1);
+    font-weight: inherit;
+    text-transform: none;
+  }
+  .header {
+    /* Hub : 4 pastilles de 45px sur une ligne, centrées */
+  }
+  .header .hub ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 0;
+  }
+  .header .hub li {
+    width: auto;
+    height: auto;
+    overflow: visible;
+  }
+  .header .hub a {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@keyframes header-bg-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* Logo au-dessus du fond du header */
+.header__brand {
+  max-width: 50px;
+  position: relative;
+  z-index: 10;
+}
+@media (width >= 1024px) {
+  .header__brand {
+    justify-self: start;
   }
 }
 
 /* ==========================================================================
-   Bouton burger (toggle du menu mobile)
+   Bouton burger : pastille ronde crème, trois barres noires
    ========================================================================== */
 .header__toggle {
+  --toggle-size: 50px;
   --bar-height: 3px;
-  --bar-spacer: 6px;
-  --bar-width: 30px;
-  background-color: transparent;
+  --bar-spacer: 3px;
+  --bar-width: 20px;
   border: none;
+  border-radius: 100%;
   outline: none;
   cursor: pointer;
   padding: 0;
   position: relative;
-  width: var(--bar-width);
-  height: var(--bar-width);
+  width: var(--toggle-size);
+  height: var(--toggle-size);
   z-index: 10;
+  -webkit-tap-highlight-color: transparent;
+  background-color: var(--color-white);
+}
+.header__toggle:focus-visible {
+  outline: 2px solid var(--color-black);
+  outline-offset: 2px;
 }
 .header__toggle span {
   background-color: var(--color-black);
-  border-radius: 3px;
+  border-radius: 2px;
   height: var(--bar-height);
-  width: 100%;
+  width: var(--bar-width);
   position: absolute;
   top: calc(50% - var(--bar-height) / 2);
   left: calc(50% - var(--bar-width) / 2);
@@ -1535,111 +1645,202 @@ a:hover {
 .header__toggle span:nth-child(3) {
   top: calc(50% - var(--bar-height) / 2 + var(--bar-height) + var(--bar-spacer));
 }
+.header__toggle {
+  /* État "menu ouvert" : le burger devient une croix */
+}
+.nav-is-active .header__toggle span {
+  top: calc(50% - var(--bar-height) / 2);
+}
+.nav-is-active .header__toggle span:nth-child(1) {
+  transform: rotate(45deg);
+}
+.nav-is-active .header__toggle span:nth-child(2) {
+  transform: scaleX(0);
+}
+.nav-is-active .header__toggle span:nth-child(3) {
+  transform: rotate(-45deg);
+}
 @media (width >= 1024px) {
   .header__toggle {
     display: none;
   }
 }
 
-/* État "menu ouvert" du burger */
-.nav-is-active .header__toggle span {
-  top: calc(50% - var(--bar-height) / 2);
-}
-
-.nav-is-active .header__toggle span:nth-child(1) {
-  transform: rotate(45deg);
-}
-
-.nav-is-active .header__toggle span:nth-child(2) {
-  transform: scaleX(0);
-}
-
-.nav-is-active .header__toggle span:nth-child(3) {
-  transform: rotate(-45deg);
-}
-
 /* ==========================================================================
    Navigation principale
    ========================================================================== */
-/* --- Mobile first : menu plein écran --- */
+/* --- Mobile first : menu plein écran, fond crème --- */
 .nav-primary {
   background-color: var(--color-white);
   position: fixed;
   top: 0;
   left: 0;
   height: 100vh;
+  height: 100dvh;
   width: 100%;
   padding-top: var(--header-height);
+  padding-bottom: 100px;
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   overflow-y: auto;
   transform: translateX(100%);
-  transition: transform 0.6s ease-out;
+  visibility: hidden;
+  transition: transform 0.6s ease-out, visibility 0s linear 0.6s;
 }
 .nav-primary ul {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 40px;
+  gap: 20px;
   list-style: none;
-  padding: 0;
+  padding: 0 var(--spacing-sm);
   margin: 0;
   width: 100%;
+  box-sizing: border-box;
   transform: translateY(-70%);
   transition: transform 0.6s ease-out;
 }
-
 .nav-is-active .nav-primary {
   transform: translateX(0);
+  visibility: visible;
+  transition-delay: 0s;
 }
-
 .nav-is-active .nav-primary ul {
   transform: translateY(0);
 }
+.nav-primary {
+  /* --- Desktop : navigation horizontale inline dans le header --- */
+}
+@media (width >= 1024px) {
+  .nav-primary {
+    display: block;
+    position: relative; /* + z-index pour passer au-dessus du ::before du header */
+    background: unset;
+    height: auto;
+    width: auto;
+    padding: 0;
+    transform: none;
+    visibility: visible;
+    transition: none;
+    z-index: 3;
+    justify-self: end;
+  }
+  .nav-primary ul {
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+    padding: 0;
+    transform: none;
+  }
+}
 
+.nav__item,
+.nav-primary__item {
+  position: relative;
+  color: var(--color-black);
+  text-transform: uppercase;
+  font-weight: 600;
+  /* Soulignement animé au survol (mobile) */
+}
+@media (width <= 1024px) {
+  .nav__item,
+  .nav-primary__item {
+    text-transform: none;
+  }
+  .nav__item::before,
+  .nav-primary__item::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: var(--color-black);
+    transform: scaleX(0);
+    transition: 0.3s all;
+  }
+  .nav__item:hover,
+  .nav-primary__item:hover {
+    text-decoration: none;
+    color: inherit;
+  }
+  .nav__item:hover::before,
+  .nav-primary__item:hover::before {
+    transform: scaleX(1);
+  }
+}
+.nav__item,
+.nav-primary__item {
+  /* Desktop */
+}
+@media (width >= 1024px) {
+  .nav__item,
+  .nav-primary__item {
+    font-size: var(--font-size-nav);
+  }
+  .nav__item::before,
+  .nav-primary__item::before {
+    content: none;
+  }
+}
+
+/* ==========================================================================
+   Hub : barre de pastilles en bas du menu mobile, inline dans le header en desktop
+   ========================================================================== */
 .nav__contact {
-  display: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+}
+.nav-is-active .nav__contact {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.4s ease 0.3s, visibility 0s;
+}
+@media (width >= 1024px) {
+  .nav__contact {
+    position: relative;
+    inset: auto;
+    justify-self: center;
+    gap: 30px;
+    opacity: 1;
+    visibility: visible;
+    transition: none;
+  }
+}
+@media (width <= 768px) {
+  .nav__contact {
+    padding-bottom: 30px;
+  }
+}
+
+@media (width >= 1024px) {
+  .invisible {
+    opacity: 0;
+    pointer-events: none;
+  }
 }
 
 /* Bloque le scroll de la page tant que le menu mobile est ouvert */
 .nav-is-active body {
   overflow: hidden;
 }
-
-/* --- Desktop : navigation horizontale inline dans le header --- */
 @media (width >= 1024px) {
-  .nav-primary {
-    display: block;
-    position: static;
-    background: unset;
-    height: auto;
-    width: auto;
-    padding-top: 0;
-    transform: none;
-    z-index: 2;
-  }
-  .nav-primary ul {
-    flex-direction: row;
-    transform: none;
-  }
-  .nav-primary__item {
-    color: var(--color-black);
-    font-size: var(--font-size-nav);
-    text-transform: uppercase;
-  }
-  .nav-primary__item::before {
-    content: none;
-  }
-  .nav__contact {
-    display: flex;
-    gap: 30px;
-  }
-  .invisible {
-    opacity: 0;
-    pointer-events: none;
+  .nav-is-active body {
+    overflow: auto;
   }
 }
+
 .hero {
   position: relative;
   display: grid;
@@ -1685,6 +1886,9 @@ a:hover {
   padding-bottom: 50px;
 }
 
+.hero__information p {
+  font-size: clamp(1rem, 0.63vw + 0.81rem, 1.38rem);
+}
 .hero__information {
   display: flex;
   gap: 100px;
@@ -1721,37 +1925,6 @@ a:hover {
   }
   .hero__information {
     gap: 30px;
-  }
-}
-.hub ul {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  padding: 0;
-}
-.hub li {
-  list-style: none;
-}
-.hub a {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-family: var(--font-primary);
-  font-weight: 600;
-}
-.hub .icon {
-  background-color: var(--color-rose);
-  width: 35px;
-  height: 35px;
-  border-radius: 100%;
-}
-
-@media (width <= 768px) {
-  .hub {
-    width: 100%;
-  }
-  .hub ul {
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
   }
 }
 .passions .wrapper {
@@ -1824,6 +1997,18 @@ a:hover {
 .titre h2 {
   width: 30%;
 }
+.titre .textes {
+  width: 50%;
+}
+.titre .textes li {
+  font-size: var(--font-size-content-small);
+}
+.titre .textes p {
+  width: 100%;
+}
+.titre .textes a {
+  text-decoration: underline;
+}
 .titre p {
   width: 50%;
 }
@@ -1858,6 +2043,9 @@ a:hover {
     flex-direction: column;
     gap: 30px;
     padding: 50px 0 30px 0;
+  }
+  .titre .textes {
+    width: 100%;
   }
   .titre h2,
   .titre p {
@@ -1900,11 +2088,9 @@ a:hover {
 }
 .cheminement .scroller {
   position: relative;
-  height: 900vh;
 }
 .cheminement .stage {
-  position: sticky;
-  top: 0;
+  position: relative;
   height: 100vh;
   height: 100svh;
   display: grid;
@@ -1924,6 +2110,7 @@ a:hover {
      object-fit: cover;
   display: block;
   filter: saturate(1.05);
+  will-change: opacity;
 }
 .cheminement .rail {
   position: relative;
@@ -1986,8 +2173,9 @@ a:hover {
   left: 0;
   top: 0;
   width: 100%;
-  height: 0%;
+  height: 100%;
   background: var(--color-bleu);
+  transform: scaleY(0);
   transform-origin: top;
 }
 
@@ -2009,11 +2197,7 @@ a:hover {
   .cheminement {
     --point-inset: 0px;
   }
-  .cheminement .scroller {
-    height: auto;
-  }
   .cheminement .stage {
-    position: relative;
     height: auto;
     grid-template-columns: 1fr;
   }
@@ -2111,7 +2295,7 @@ a:hover {
 
 .card__content {
   padding: 50px 30px;
-  color: var(--color-white);
+  color: var(--color-black);
   position: absolute;
   bottom: 0;
   left: 0;
@@ -2411,6 +2595,9 @@ a:hover {
   height: 100vh;
 }
 
+.processus {
+  padding-bottom: 60px;
+}
 .processus .labels {
   grid-template-columns: 1fr 3fr 4fr;
 }
