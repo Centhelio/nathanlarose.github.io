@@ -1,340 +1,486 @@
-{% include '_partials/_header.html' %}
-<div data-component="Scroller">
-    <div class="hero js-horiz" >
-        <div class="hero__content js-panel">
-            <div class="wrapper">
-                <span></span>
-                <h1 class="">Bien plus qu’une chambre d’hôtel</h1>
-                
-                <div class="hero__information">
-                    <p>Boxotel</p>
-                    <p>
-                        Refonte du site hôtelier de Boxotel
-                    </p>
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nathan Larose | Portfolio</title>
+
+    <link rel="stylesheet" href="styles/main.css" />
+
+    <script src="scripts/main.js" defer></script>
+
+    <!-- Favicon link -->
+    <link rel="icon" type="image/png" href="assets/images/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="assets/images/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="assets/images/favicon/site.webmanifest" />
+</head>
+
+<body data-component="Ball">
+    <div class="page-transition" data-component="PageTransition">
+        <div class="page-transition__rect"></div>
+        <div class="page-transition__rect"></div>
+        <div class="page-transition__rect"></div>
+        <div class="page-transition__rect"></div>
+    </div>
+
+    <div class="cursor">
+        <div class="cursor__ball">
+            <div class="cursor__ball-text">
+                <span class="cursor__ball-text-span"></span>
+            </div>
+        </div>
+    </div>
+
+    <header class="header" data-component="Header" data-threshold="0.1">
+        <a href="index.html" class="header__brand">
+            <img src="assets/images/logo.svg" alt="">
+        </a>
+
+        <nav class="nav__contact" aria-label="Contact">
+            <div class="hub">
+                <ul class="hub__information">
+                    <li>
+                        <a href="https://www.instagram.com/nate_lar07/" aria-label="Projets">
+                            <svg class="icon icon-lg hub--icons">
+                                <use xlink:href="#icon-instagram"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/nathan-larose-013556300/" aria-label="LinkedIn">
+                            <svg class="icon icon-lg hub--icons">
+                                <use xlink:href="#icon-linkedin"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="assets/images/CV_nathan_larose_2026.pdf" download="" aria-label="Télécharger mon CV">
+                            <svg class="icon icon-lg hub--icons">
+                                <use xlink:href="#icon-download"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:nathanlarose07@gmail.com" aria-label="M'écrire un courriel">
+                            <svg class="icon icon-lg hub--icons">
+                                <use xlink:href="#icon-contact"></use>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <nav class="nav-primary" aria-label="Navigation principale">
+            <ul class="nav__menu">
+                <li>
+                    <a href="index.html" class="nav__item">Moi</a>
+                </li>
+                <li>
+                    <a href="projets.html" class="nav__item">Projets</a>
+                </li>
+            </ul>
+        </nav>
+
+        <button class="header__toggle js-toggle" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+
+    <div data-component="Scroller">
+        <div class="hero js-horiz">
+            <div class="hero__content js-panel">
+                <div class="wrapper">
+                    <span></span>
+                    <h1 class="">Bien plus qu’une chambre d’hôtel</h1>
+
+                    <div class="hero__information">
+                        <a href="https://nlarose.dectim.ca/boxotel/" data-interactive data-cursor-text="Voir plus">Boxotel</a>
+                        <p>Refonte du site hôtelier de Boxotel</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero__media js-panel">
+                <picture>
+                    <source media="(max-width: 768px)" srcset="assets/images/boxotel/hero__boxotel-mobile.jpg" />
+                    <img src="assets/images/boxotel/hero__boxotel-desktop.jpg" alt="Portrait de Nathan Larose" />
+                </picture>
+            </div>
+        </div>
+    </div>
+
+    <section class="apprentissage">
+        <div class="wrapper">
+            <div class="titre" data-component="HighlightText">
+                <h3>Crédits</h3>
+                <p>J’ai utilisé l’IA pour corriger mes textes et pour générer du contenu fictif</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contexte">
+        <div class="wrapper">
+            <div class="titre" data-component="HighlightText">
+                <h3>Le contexte</h3>
+                <p>
+                    Dans le cours de
+                    <span class="highlight highlight--jaune">
+                        <span class="highlight-bg"></span>
+                        design d’expérience,
+                    </span>
+                    nous devions proposer une refonte du site hôtelier de Boxotel afin de pratiquer nos compétences de
+                    <span class="highlight highlight--rose">
+                        <span class="highlight-bg"></span>
+                        designer UX et UI.
+                    </span>
+                </p>
+            </div>
+        </div>
+
+        <div class="images">
+            <div class="image">
+                <img src="assets/images/boxotel/boxotel-contexte1.jpg" alt="" />
+            </div>
+            <div class="image">
+                <img src="assets/images/boxotel/boxotel-contexte2.jpg" alt="" />
+            </div>
+        </div>
+    </section>
+
+    <section class="objectif">
+        <div class="wrapper">
+            <div class="titre" data-component="HighlightText">
+                <h3>L’objectif</h3>
+                <p>
+                    Rendre l’ancien site web de Boxotel
+                    <span class="highlight highlight--jaune">
+                        <span class="highlight-bg"></span>
+                        intuitif
+                    </span>
+                    et
+                    <span class="highlight highlight--vert">
+                        <span class="highlight-bg"></span>
+                        facilement navigable.
+                    </span>
+                    Il devait également respecter les
+                    <span class="highlight highlight--bleu">
+                        <span class="highlight-bg"></span>
+                        styles déjà établis
+                    </span>
+                    par le client.
+                </p>
+            </div>
+        </div>
+
+        <div class="image">
+            <img src="assets/images/boxotel/boxotel-full_slide.jpg" alt="" />
+        </div>
+
+        <!-- Slider principal -->
+        <div class="swiper" data-component="Carousel" data-interactive data-cursor-text="Déroule →">
+            <!-- Conteneur requis -->
+            <div class="swiper-wrapper">
+                <!-- Diapositives -->
+                <div class="swiper-slide">
+                    <img class="rectangle" src="assets/images/boxotel/boxotel-caroussel_slide1.jpg" alt="" />
+                    <p class="p-small">Maquettes desktop Figma</p>
+                </div>
+                <div class="swiper-slide">
+                    <img src="assets/images/boxotel/boxotel-caroussel_slide2.jpg" alt="" />
+                    <p class="p-small">Design de la page d’accueil</p>
+                </div>
+                <div class="swiper-slide carre">
+                    <img src="assets/images/boxotel/boxotel-caroussel_slide3.jpg" alt="" />
+                    <p class="p-small">Composant de la navigation desktop</p>
+                </div>
+                <div class="swiper-slide">
+                    <img src="assets/images/boxotel/boxotel-caroussel_slide4.jpg" alt="" />
+                    <p class="p-small">Maquettes mobiles Figma</p>
+                </div>
+                <div class="swiper-slide">
+                    <img src="assets/images/boxotel/boxotel-caroussel_slide5.jpg" alt="" />
+                    <p class="p-small">Élément du formulaire de réservation</p>
+                </div>
+                <div class="swiper-slide">
+                    <img src="assets/images/boxotel/boxotel-caroussel_slide6.jpg" alt="" />
+                    <p class="p-small">Logo fourni par le client</p>
                 </div>
             </div>
         </div>
-        
-        <div class="hero__media js-panel">
-            <picture>
-                <source media="(max-width: 768px)" srcset="assets/images/boxotel/hero__boxotel-mobile.jpg">
-                <img src="assets/images/boxotel/hero__boxotel-desktop.jpg" alt="Portrait de Nathan Larose">
-            </picture>
-        </div>
-    </div>
-</div>
+    </section>
 
-<section class="apprentissage">
-    <div class="wrapper">
-        <div class="titre" data-component="HighlightText">
-            <h3>Crédits</h3>
-            <p>J’ai utilisé l’IA pour corriger mes textes et pour générer du contenu fictif</p>
-        </div>
-    </div>
-</section>
-
-<section class="contexte">
-    <div class="wrapper">
-        <div class="titre" data-component="HighlightText">
-            <h3>Le contexte</h3>
-            <p>Dans le cours de 
-                <span class="highlight highlight--jaune">
-                    <span class="highlight-bg"></span>
-                    design d’expérience,
-                </span>
-                nous devions proposer une refonte du site hôtelier de Boxotel afin de pratiquer nos compétences de
-                <span class="highlight highlight--rose">
-                    <span class="highlight-bg"></span>
-                    designer UX et UI.
-                </span>
-            </p>
-        </div>
-    </div>
-
-    <div class="images">
-        <div class="image">
-            <img src="assets/images/boxotel/boxotel-contexte1.jpg" alt="" />
-        </div>
-        <div class="image">
-            <img src="assets/images/boxotel/boxotel-contexte2.jpg" alt="" />
-        </div>
-    </div>
-</section>
-
-
-<section class="objectif">
-    <div class="wrapper">
-        <div class="titre" data-component="HighlightText">
-            <h3>L’objectif</h3>
-            <p>
-                Rendre l’ancien site web de Boxotel
-                <span class="highlight highlight--jaune">
-                    <span class="highlight-bg"></span>
-                    intuitif
-                </span>
-                et 
-                <span class="highlight highlight--vert">
-                    <span class="highlight-bg"></span>
-                    facilement navigable.
-                </span>
-                Il devait également respecter les 
-                <span class="highlight highlight--bleu">
-                    <span class="highlight-bg"></span>
-                    styles déjà établis
-                </span>
-                par le client.
-            </p>
-        </div>
-    </div>
-
-    <div class="image">
-        <img src="assets/images/boxotel/boxotel-full_slide.jpg" alt="" />
-    </div>
-
-    <!-- Slider principal -->
-    <div class="swiper" data-component="Carousel" data-interactive data-cursor-text="Déroule →">
-        <!-- Conteneur requis -->
-        <div class="swiper-wrapper">
-            <!-- Diapositives -->
-            <div class="swiper-slide">
-                <img class="rectangle" src="assets/images/boxotel/boxotel-caroussel_slide1.jpg" alt="" />
-                <p class="p-small">Maquettes desktop Figma</p>
-            </div>
-            <div class="swiper-slide">
-                <img src="assets/images/boxotel/boxotel-caroussel_slide2.jpg" alt="" />
-                <p class="p-small">Design de la page d’accueil</p>
-            </div>
-            <div class="swiper-slide carre">
-                <img src="assets/images/boxotel/boxotel-caroussel_slide3.jpg" alt="" />
-                <p class="p-small">Composant de la navigation desktop</p>
-            </div>
-            <div class="swiper-slide">
-                <img src="assets/images/boxotel/boxotel-caroussel_slide4.jpg" alt="" />
-                <p class="p-small">Maquettes mobiles Figma</p>
-            </div>
-            <div class="swiper-slide">
-                <img src="assets/images/boxotel/boxotel-caroussel_slide5.jpg" alt="" />
-                <p class="p-small">Élément du formulaire de réservation</p>
-            </div>
-            <div class="swiper-slide">
-                <img src="assets/images/boxotel/boxotel-caroussel_slide6.jpg" alt="" />
-                <p class="p-small">Logo fourni par le client</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<section class="technique">
-    <div class="wrapper">
-        <div class="titre" data-component="HighlightText">
-            <h3>Environnement technique</h3>
-            <p>
-                Les différents outils, logiciels et techniques utilisés pour ce projet
-            </p>
-        </div>
-    </div>
-    <div class="">
+    <section class="technique">
         <div class="wrapper">
-            <div class="listes labels">
-                <p>sortes</p>
-                <p>compétence</p>
-                <p>en gros</p>
+            <div class="titre" data-component="HighlightText">
+                <h3>Environnement technique</h3>
+                <p>Les différents outils, logiciels et techniques utilisés pour ce projet</p>
             </div>
         </div>
-    </div>
-    <div class="full__projet pink">
+        <div class="">
+            <div class="wrapper">
+                <div class="listes labels">
+                    <p>sortes</p>
+                    <p>compétence</p>
+                    <p>en gros</p>
+                </div>
+            </div>
+        </div>
+        <div class="full__projet pink">
+            <div class="wrapper">
+                <a class="projet listes hover-text" data-hover="dynamiques">
+                    <h4>Logiciel</h4>
+                    <h4>Figma</h4>
+                    <p>Conception de maquettes et de prototypes interactifs</p>
+                </a>
+            </div>
+        </div>
+        <div class="full__projet bleu">
+            <div class="wrapper">
+                <a class="projet listes hover-text" data-hover="dynamiques">
+                    <h4>Outil</h4>
+                    <h4>Visual Studio Code</h4>
+                    <p>Intégration des maquettes en HTML, CSS et JS</p>
+                </a>
+            </div>
+        </div>
+        <div class="full__projet vert">
+            <div class="wrapper">
+                <a class="projet listes hover-text" data-hover="dynamiques">
+                    <h4>Logiciel</h4>
+                    <h4>Pinterest</h4>
+                    <p>Recherche de comparables et inspiration</p>
+                </a>
+            </div>
+        </div>
+        <div class="full__projet jaune">
+            <div class="wrapper">
+                <a class="projet listes hover-text" data-hover="dynamiques">
+                    <h4>Technique</h4>
+                    <h4>Lisibilité</h4>
+                    <p>Rendre mes contenus lisibles.</p>
+                </a>
+            </div>
+        </div>
+        <div class="full__projet pink">
+            <div class="wrapper">
+                <a class="projet listes hover-text" data-hover="dynamiques">
+                    <h4>Technique</h4>
+                    <h4>Intuitivité</h4>
+                    <p>Rendre mes contenus clairs et simples à comprendre.</p>
+                </a>
+            </div>
+        </div>
+        <div class="full__projet pink">
+            <div class="wrapper">
+                <a class="projet listes hover-text" data-hover="dynamiques">
+                    <h4>Outil</h4>
+                    <h4>Google Drive</h4>
+                    <p>Stockage des photos et des contenus utilisés dans le projet.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="direction_visuel">
         <div class="wrapper">
-            <a class="projet listes hover-text" data-hover="dynamiques">
-                <h4>Logiciel</h4>
-                <h4>Figma</h4>
+            <div class="titre" data-component="HighlightText">
+                <h3>Ma direction visuel</h3>
+                <p>Personnellement j'ai essayer d'espacer les elements le plus possible pour faire respirer le site et rendre les images le plus full widht</p>
+            </div>
+        </div>
+
+        <div class="images">
+            <div class="image">
+                <img src="assets/images/boxotel/boxotel-direction_visuel-1.jpg" alt="" />
+
+                <p class="p-small">Légende</p>
+            </div>
+            <div class="image">
+                <img src="assets/images/boxotel/boxotel-direction_visuel-2.jpg" alt="" />
+                <p class="p-small">Légende</p>
+            </div>
+            <div class="image">
+                <img src="assets/images/boxotel/boxotel-direction_visuel-3.jpg" alt="" />
+                <p class="p-small">Légende</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="processus" data-component="HoverImage">
+        <div class="hover-image" data-hover="analyse"><img src="assets/images/boxotel/boxotel-analyse_ux.jpg" /></div>
+        <div class="hover-image" data-hover="comparable"><img src="assets/images/boxotel/boxotel-recherche_comparable.jpg" /></div>
+        <div class="hover-image" data-hover="maquette"><img src="assets/images/boxotel/boxotel_maquettes.jpg" /></div>
+        <div class="hover-image" data-hover="prototype"><img src="assets/images/boxotel/boxotel-prototypage.jpg" /></div>
+        <div class="hover-image" data-hover="integration"><img src="assets/images/boxotel/boxotel-integration.jpg" /></div>
+
+        <div class="wrapper">
+            <div class="titre" data-component="HighlightText">
+                <h3>Mon processus</h3>
                 <p>
-                    Conception de maquettes et de prototypes interactifs
+                    Voici les
+                    <span class="highlight highlight--rose">
+                        <span class="highlight-bg"></span>
+                        5 étapes majeures
+                    </span>
+                    de ce projet qui l’ont mené à sa complétion.
                 </p>
-            </a>
-        </div>
-    </div>
-    <div class="full__projet bleu">
-        <div class="wrapper">
-            <a class="projet listes hover-text" data-hover="dynamiques">
-                <h4>Outil</h4>
-                <h4>Visual Studio Code</h4>
-                <p>Intégration des maquettes en HTML, CSS et JS</p>
-            </a>
-        </div>
-    </div>
-    <div class="full__projet vert">
-        <div class="wrapper">
-            <a class="projet listes hover-text" data-hover="dynamiques">
-                <h4>Logiciel</h4>
-                <h4>Pinterest</h4>
-                <p>Recherche de comparables et inspiration</p>
-            </a>
-        </div>
-    </div>
-    <div class="full__projet jaune">
-        <div class="wrapper">
-            <a class="projet listes hover-text" data-hover="dynamiques">
-                <h4>Technique</h4>
-                <h4>Lisibilité</h4>
-                <p>Rendre mes contenus lisibles.</p>
-            </a>
-        </div>
-    </div>
-    <div class="full__projet pink">
-        <div class="wrapper">
-            <a class="projet listes hover-text" data-hover="dynamiques">
-                <h4>Technique</h4>
-                <h4>Intuitivité</h4>
-                <p>Rendre mes contenus clairs et simples à comprendre.</p>
-            </a>
-        </div>
-    </div>
-    <div class="full__projet pink">
-        <div class="wrapper">
-            <a class="projet listes hover-text" data-hover="dynamiques">
-                <h4>Outil</h4>
-                <h4>Google Drive</h4>
-                <p>Stockage des photos et des contenus utilisés dans le projet.</p>
-            </a>
-        </div>
-    </div>
-</section>
-
-<section class="direction_visuel">
-    <div class="wrapper">
-        <div class="titre" data-component="HighlightText">
-            <h3>Ma direction visuel</h3>
-            <p>
-                Personnellement j'ai essayer d'espacer les elements le plus possible pour faire respirer le site et rendre les images le plus full widht
-            </p>
-        </div>
-    </div>
-
-    <div class="images">
-        <div class="image">
-            <img src="assets/images/boxotel/boxotel-direction_visuel-1.jpg" alt="" />
-
-            <p class="p-small">Légende</p>
-        </div>
-        <div class="image">
-            <img src="assets/images/boxotel/boxotel-direction_visuel-2.jpg" alt="" />
-            <p class="p-small">Légende</p>
-        </div>
-        <div class="image">
-            <img src="assets/images/boxotel/boxotel-direction_visuel-3.jpg" alt="" />
-            <p class="p-small">Légende</p>
-        </div>
-    </div>
-</section>
-
-<section class="processus"  data-component="HoverImage">
-
-    <div class="hover-image" data-hover="analyse"><img src="assets/images/boxotel/boxotel-analyse_ux.jpg" /></div>
-    <div class="hover-image" data-hover="comparable"><img src="assets/images/boxotel/boxotel-recherche_comparable.jpg" /></div>
-    <div class="hover-image" data-hover="maquette"><img src="assets/images/boxotel/boxotel_maquettes.jpg" /></div>
-    <div class="hover-image" data-hover="prototype"><img src="assets/images/boxotel/boxotel-prototypage.jpg" /></div>
-    <div class="hover-image" data-hover="integration"><img src="assets/images/boxotel/boxotel-integration.jpg" /></div>
-
-    <div class="wrapper">
-        <div class="titre" data-component="HighlightText">
-            <h3>Mon processus</h3>
-            <p>
-                Voici les 
-                <span class="highlight highlight--rose">
-                    <span class="highlight-bg"></span>
-                    5 étapes majeures 
-                </span>
-                de ce projet qui l’ont mené à sa complétion.
-            </p>
-        </div>
-    </div>
-    <div class="">
-        <div class="wrapper">
-            <div class="listes labels">
-                <p>étape</p>
-                <p>titre</p>
-                <p>en gros</p>
             </div>
         </div>
-    </div>
-    <div class="full__projet pink">
-        <div class="wrapper">
-            <a class="projet listes hover-text" data-hover="analyse">
-                <h3>01</h3>
-                <h4>Analyse UX</h4>
-                <p>
-                    J’ai analysé l’ancien site de Boxotel et identifié les composants qui fonctionnaient moins bien afin de mieux comprendre les améliorations à apporter.
-                </p>
-            </a>
+        <div class="">
+            <div class="wrapper">
+                <div class="listes labels">
+                    <p>étape</p>
+                    <p>titre</p>
+                    <p>en gros</p>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="full__projet bleu">
-        <div class="wrapper">
-            <a class="projet listes hover-text" data-hover="comparable">
-                <h3>02</h3>
-                <h4>Recherche de comparable</h4>
-                <p>J’ai recherché des sites hôteliers similaires qui pourraient bien s’intégrer à l’identité de Boxotel et m’inspirer pour définir ma direction visuelle.</p>
-            </a>
+        <div class="full__projet pink">
+            <div class="wrapper">
+                <a class="projet listes hover-text" data-hover="analyse">
+                    <h3>01</h3>
+                    <h4>Analyse UX</h4>
+                    <p>
+                        J’ai analysé l’ancien site de Boxotel et identifié les composants qui fonctionnaient moins bien afin de mieux comprendre les améliorations à
+                        apporter.
+                    </p>
+                </a>
+            </div>
         </div>
-    </div>
-    <div class="full__projet vert">
-        <div class="wrapper">
-            <a class="projet listes hover-text" data-hover="maquette">
-                <h3>03</h3>
-                <h4>Maquettes</h4>
-                <p>J’ai créé mes maquettes dans Figma en organisant les différents éléments visuels et en appliquant ma direction artistique à chaque page du site.
-                </p>
-            </a>
+        <div class="full__projet bleu">
+            <div class="wrapper">
+                <a class="projet listes hover-text" data-hover="comparable">
+                    <h3>02</h3>
+                    <h4>Recherche de comparable</h4>
+                    <p>
+                        J’ai recherché des sites hôteliers similaires qui pourraient bien s’intégrer à l’identité de Boxotel et m’inspirer pour définir ma direction
+                        visuelle.
+                    </p>
+                </a>
+            </div>
         </div>
-    </div>
-    <div class="full__projet jaune">
-        <div class="wrapper">
-            <a class="projet listes hover-text" data-hover="prototype">
-                <h3>04</h3>
-                <h4>Prototypage</h4>
-                <p>J’ai animé les éléments de mes maquettes dans Figma avec le mode prototype afin de simuler les interactions et de rendre la navigation plus réaliste.</p>
-            </a>
+        <div class="full__projet vert">
+            <div class="wrapper">
+                <a class="projet listes hover-text" data-hover="maquette">
+                    <h3>03</h3>
+                    <h4>Maquettes</h4>
+                    <p>
+                        J’ai créé mes maquettes dans Figma en organisant les différents éléments visuels et en appliquant ma direction artistique à chaque page du
+                        site.
+                    </p>
+                </a>
+            </div>
         </div>
-    </div>
-    <div class="full__projet pink">
-        <div class="wrapper">
-            <a class="projet listes hover-text" data-hover="integration">
-                <h3>05</h3>
-                <h4>Intégration Web</h4>
-                <p>
-                    Une fois toutes les maquettes terminées, j’ai intégré les différents écrans en HTML et CSS pour reproduire le design et assurer un affichage cohérent.
-                </p>
-            </a>
+        <div class="full__projet jaune">
+            <div class="wrapper">
+                <a class="projet listes hover-text" data-hover="prototype">
+                    <h3>04</h3>
+                    <h4>Prototypage</h4>
+                    <p>
+                        J’ai animé les éléments de mes maquettes dans Figma avec le mode prototype afin de simuler les interactions et de rendre la navigation plus
+                        réaliste.
+                    </p>
+                </a>
+            </div>
         </div>
-    </div>
-</section>
+        <div class="full__projet pink">
+            <div class="wrapper">
+                <a class="projet listes hover-text" data-hover="integration">
+                    <h3>05</h3>
+                    <h4>Intégration Web</h4>
+                    <p>
+                        Une fois toutes les maquettes terminées, j’ai intégré les différents écrans en HTML et CSS pour reproduire le design et assurer un affichage
+                        cohérent.
+                    </p>
+                </a>
+            </div>
+        </div>
+    </section>
 
-<section class="prototype">
-    <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="100%" src="https://embed.figma.com/proto/YSA8OLAdM832BIH6WybHze/1012_larose_nathan_TP2?node-id=8423-819&p=f&viewport=516%2C116%2C0.15&scaling=scale-down&content-scaling=fixed&starting-point-node-id=8423%3A819&show-proto-sidebar=1&page-id=4218%3A2734&embed-host=share" allowfullscreen></iframe>
-</section>
+    <section class="prototype">
+        <iframe style="border: 1px solid rgba(0, 0, 0, 0.1)" width="100%" height="100%" src="https://embed.figma.com/proto/YSA8OLAdM832BIH6WybHze/1012_larose_nathan_TP2?node-id=8423-819&p=f&viewport=516%2C116%2C0.15&scaling=scale-down&content-scaling=fixed&starting-point-node-id=8423%3A819&show-proto-sidebar=1&page-id=4218%3A2734&embed-host=share" allowfullscreen></iframe>
+    </section>
 
-<section class="apprentissage">
-    <div class="wrapper">
-        <div class="titre" data-component="HighlightText">
-            <h3>Ce que j’ai appris</h3>
-            <p>
-                Dans ce projet, j’ai beaucoup appris. Puisque c’était ma première refonte de site web, mon projet était rempli d’expériences nouvelles et enrichissantes.            
+    <section class="apprentissage">
+        <div class="wrapper">
+            <div class="titre" data-component="HighlightText">
+                <h3>Ce que j’ai appris</h3>
+                <p>
+                    Dans ce projet, j’ai beaucoup appris. Puisque c’était ma première refonte de site web, mon projet était rempli d’expériences nouvelles et
+                    enrichissantes.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="next">
+        <div class="wrapper">
+            <a href="projet-webjam.html" data-interactive data-cursor-text="Voir plus">
+                <h2>Retour en arrière</h2>
+                <img src="assets/images/preview-webjam.jpg" alt="" />
+            </a>
+            <a href="projet-bourgeon.html" data-interactive data-cursor-text="Voir plus">
+                <h2>Direction prochain projet</h2>
+                <img src="assets/images/preview-bourgeon.jpg" alt="" />
+            </a>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="wrapper">
+            <h2>On n'en reste pas là ?</h2>
+            <p>Ce projet a été réalisé dans le cadre de mon portfolio afin de créer une identité visuelle qui représente</p>
+
+            <div class="buttons">
+                <a class="button secondary" href="projets.html" data-interactive data-cursor-text="Voir plus">Voir mes projets</a>
+                <a class="button primary" href="projets.html" data-interactive data-cursor-text="Voir plus">Prendre un café</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="wrapper grids">
+            <div class="grid footer__contact">
+                <p>Dites bonjour</p>
+                <h4>nathanlarose07@gmail.com</h4>
+                <h4>+1 (438)-765-7951</h4>
+            </div>
+
+            <div class="grid footer__localisation">
+                <p>Où me trouver</p>
+                <a class="h4" data-interactive data-cursor-text="Me trouver">Le Vieux-Longueuil, <br> Longueuil, QC</a>
+            </div>
+
+            <div class="grid footer__media">
+                <p>Me suivre</p>
+                <a class="h4" href="#" data-interactive data-cursor-text="Voir plus">
+                    Instagram
+                </a>
+                <a class="h4" href="https://www.linkedin.com/in/nathan-larose-013556300/" data-interactive data-cursor-text="Voir plus">
+                    Linkedin
+                </a>
+                <a class="h4" href="assets/images/CV_nathan_larose_2026.pdf" download="" data-interactive data-cursor-text="Voir plus">
+                    Curriculum vitae
+                </a>
+
+            </div>
+
+
+        </div>
+        <div class="wrapper declaration">
+            <p class="p-small">
+                J’ai utilisé une IA pour corriger mes textes et réaliser les animations en collaboration. Les idées et le contenu sont les miens.
             </p>
         </div>
-    </div>
-</section>
+    </footer>
 
-<section class="cta">
-    <div class="wrapper">
-        <h2>On n'en reste pas là ?</h2>
-        <p>Ce projet a été réalisé dans le cadre de mon portfolio afin de créer une identité visuelle qui représente</p>
+</body>
 
-        <div class="buttons">
-            <a class="button secondary" href="projets.html" data-interactive data-cursor-text="Voir plus">Voir mes projets</a>
-            <a class="button primary" href="projets.html" data-interactive data-cursor-text="Voir plus">Prendre un café</a>
-        </div>
-    </div>
-</section>
-
-{% include '_partials/_footer.html' %}
+</html>

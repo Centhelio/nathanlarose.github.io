@@ -1436,15 +1436,11 @@ a:hover {
   align-items: center;
   justify-content: space-between;
   padding: 0 var(--spacing-sm);
-  /* "fixed" : le header ne prend pas de place dans la page,
-     il suit le scroll et se cache au scroll vers le bas. */
   position: fixed;
   top: 0;
   left: 0;
   z-index: 99;
   transition: transform 0.4s ease-out;
-  /* Fond du header : transparent tout en haut de la page,
-     puis il devient blanc pendant les 100 premiers px de scroll */
 }
 .header::before {
   content: "";
@@ -1463,9 +1459,6 @@ a:hover {
     animation-timeline: scroll(root block);
     animation-range: 0 var(--header-height);
   }
-}
-.header {
-  /* Menu mobile ouvert : le fond du header disparaît pour se fondre dans le menu */
 }
 .nav-is-active .header::before {
   animation: none;
@@ -1515,7 +1508,6 @@ a:hover {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  isolation: isolate; /* garde le ::before (z-index -1) visible au-dessus du fond du header */
 }
 .header li::before {
   content: "";
@@ -1532,10 +1524,6 @@ a:hover {
   font-weight: 600;
   position: relative;
 }
-.header {
-  /* Desktop : 3 colonnes [logo | hub | menu]. Les colonnes latérales ont toujours
-     la même largeur (1fr), donc le hub reste centré dans la page. */
-}
 @media (width >= 1024px) {
   .header {
     display: grid;
@@ -1548,9 +1536,6 @@ a:hover {
   /* ---------- Mobile / tablette : liens du menu + hub ---------- */
 }
 @media (width <= 1024px) {
-  .header {
-    /* Liens "Moi" / "Projets" : grands, alignés à gauche */
-  }
   .header .nav__menu li {
     width: auto;
     height: auto;
@@ -1564,9 +1549,6 @@ a:hover {
     font-size: var(--font-size-h1);
     font-weight: inherit;
     text-transform: none;
-  }
-  .header {
-    /* Hub : 4 pastilles de 45px sur une ligne, centrées */
   }
   .header .hub ul {
     display: flex;
@@ -1593,7 +1575,6 @@ a:hover {
     opacity: 1;
   }
 }
-/* Logo au-dessus du fond du header */
 .header__brand {
   max-width: 50px;
   position: relative;
@@ -1645,9 +1626,6 @@ a:hover {
 .header__toggle span:nth-child(3) {
   top: calc(50% - var(--bar-height) / 2 + var(--bar-height) + var(--bar-spacer));
 }
-.header__toggle {
-  /* État "menu ouvert" : le burger devient une croix */
-}
 .nav-is-active .header__toggle span {
   top: calc(50% - var(--bar-height) / 2);
 }
@@ -1669,7 +1647,6 @@ a:hover {
 /* ==========================================================================
    Navigation principale
    ========================================================================== */
-/* --- Mobile first : menu plein écran, fond crème --- */
 .nav-primary {
   background-color: var(--color-white);
   position: fixed;
@@ -1710,13 +1687,10 @@ a:hover {
 .nav-is-active .nav-primary ul {
   transform: translateY(0);
 }
-.nav-primary {
-  /* --- Desktop : navigation horizontale inline dans le header --- */
-}
 @media (width >= 1024px) {
   .nav-primary {
     display: block;
-    position: relative; /* + z-index pour passer au-dessus du ::before du header */
+    position: relative;
     background: unset;
     height: auto;
     width: auto;
@@ -1742,7 +1716,6 @@ a:hover {
   color: var(--color-black);
   text-transform: uppercase;
   font-weight: 600;
-  /* Soulignement animé au survol (mobile) */
 }
 @media (width <= 1024px) {
   .nav__item,
@@ -1771,10 +1744,6 @@ a:hover {
   .nav-primary__item:hover::before {
     transform: scaleX(1);
   }
-}
-.nav__item,
-.nav-primary__item {
-  /* Desktop */
 }
 @media (width >= 1024px) {
   .nav__item,
@@ -1831,7 +1800,6 @@ a:hover {
   }
 }
 
-/* Bloque le scroll de la page tant que le menu mobile est ouvert */
 .nav-is-active body {
   overflow: hidden;
 }
@@ -1956,7 +1924,7 @@ a:hover {
 }
 
 .hover-image {
-  width: 300px; /* Adjust the width as needed */
+  width: 300px;
   height: auto;
   position: fixed;
   top: 0;
@@ -1969,10 +1937,13 @@ a:hover {
 }
 
 .larger {
-  width: 400px;
+  width: 500px;
 }
 
-/* Constrain the size of the img element inside the div */
+.medium {
+  width: 350px;
+}
+
 .hover-image img {
   width: 100%;
   height: auto;
@@ -2202,9 +2173,12 @@ a:hover {
     grid-template-columns: 1fr;
   }
   .cheminement .photo {
-    aspect-ratio: 4/3;
-    max-height: 45svh;
     width: 100%;
+    height: 45svh;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: top;
+       object-position: top;
   }
   .cheminement .rail {
     height: auto;
@@ -2216,9 +2190,7 @@ a:hover {
   .cheminement .point {
     flex: none;
     grid-template-columns: 56px 1fr;
-    align-items: start;
     gap: 16px;
-    padding: 16px 20px;
     margin: 0;
   }
   .cheminement .point:first-child {
@@ -2246,6 +2218,7 @@ a:hover {
 }
 
 .labels {
+  height: 100px !important;
   border-top: none;
 }
 .labels p {
@@ -2254,6 +2227,43 @@ a:hover {
   font-weight: 500;
 }
 
+.outils .listes {
+  height: 120px;
+}
+
+.philosophie .listes {
+  height: 120px;
+}
+
+.technique .listes {
+  height: 120px;
+}
+
+.etapes .listes {
+  height: 200px;
+}
+
+.projets .listes {
+  height: 200px;
+}
+
+@media (width <= 768px) {
+  .outils .listes {
+    height: 150px;
+  }
+  .philosophie .listes {
+    height: 150px;
+  }
+  .technique .listes {
+    height: 150px;
+  }
+  .etapes .listes {
+    height: 200px;
+  }
+  .projets .listes {
+    height: 500px;
+  }
+}
 .soft {
   grid-template-columns: 2fr 3fr 6fr;
 }
@@ -2630,12 +2640,58 @@ a:hover {
   }
   .processus .full__projet .projet,
   .processus .full__projet .outil {
-    grid-template-columns: 2fr 3fr;
+    grid-template-columns: auto 3fr;
   }
   .processus .full__projet h3 {
     display: none;
   }
+  .technique .labels {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+  }
+  .technique .labels :nth-child(1) {
+    display: none;
+  }
+  .technique .full__projet .projet,
+  .technique .full__projet .outil {
+    grid-template-columns: 2fr 3fr;
+  }
+  .technique .full__projet h3 {
+    display: none;
+  }
 }
+.next .wrapper {
+  padding: 60px 0;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+}
+@media (width <= 768px) {
+  .next .wrapper {
+    gap: 60px;
+    flex-direction: column;
+  }
+  .next .wrapper a:nth-child(2) h2 {
+    text-align: end;
+    width: 80%;
+  }
+}
+.next .wrapper a {
+  display: flex;
+  align-items: end;
+  flex-direction: column;
+  gap: 30px;
+}
+.next .wrapper a img {
+  width: 20%;
+}
+.next .wrapper a:nth-child(2) {
+  align-items: end;
+}
+.next .wrapper a:nth-child(1) {
+  align-items: start;
+}
+
 .page-transition {
   position: fixed;
   inset: 0;
@@ -2661,5 +2717,18 @@ a:hover {
 }
 .page-transition__rect:nth-child(4) {
   background-color: var(--color-jaune);
+}
+
+.error .wrapper {
+  width: 100vh;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+.error h1 {
+  font-size: clamp(2.13rem, 17.29vw + -3.06rem, 12.5rem);
 }
 /*# sourceMappingURL=main.css.map */
