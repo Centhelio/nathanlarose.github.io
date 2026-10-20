@@ -2383,21 +2383,20 @@ a:hover {
   .realisation .cards {
     grid-template-columns: 1fr;
   }
+  .realisation .card {
+    overflow: visible;
+    height: auto;
+  }
   .realisation .card .card__content {
-    transform: translateY(0%);
+    position: relative;
+    transform: translateY(0);
+    display: block;
+    padding-top: 0;
     visibility: visible;
   }
-  .realisation .card .card__content.jaune {
-    background-color: none;
-  }
-  .realisation .card .card__content.pink {
-    background-color: none;
-  }
-  .realisation .card .card__content.bleu {
-    background-color: none;
-  }
-  .realisation .card .card__media img {
-    filter: brightness(85%);
+  .realisation .card .card__media {
+    height: 60%;
+    filter: brightness(100%);
   }
 }
 .cta {
