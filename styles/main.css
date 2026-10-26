@@ -1941,7 +1941,7 @@ a:hover {
 }
 
 .medium {
-  width: 350px;
+  width: 370px;
 }
 
 .hover-image img {
@@ -2261,7 +2261,7 @@ a:hover {
     height: 200px;
   }
   .projets .listes {
-    height: 500px;
+    height: 550px;
   }
 }
 .soft {
@@ -2457,8 +2457,8 @@ a:hover {
   font-weight: 500;
 }
 .footer .p-small {
-  width: 70%;
-  font-size: 14px !important;
+  width: 100%;
+  font-size: 18px !important;
   text-align: center;
 }
 
@@ -2584,6 +2584,9 @@ a:hover {
 .swiper-slide {
   width: 100%;
 }
+.swiper-slide .p-small {
+  padding-left: 10px;
+}
 .swiper-slide img {
   width: 100%;
   height: auto;
@@ -2610,6 +2613,9 @@ a:hover {
 .processus .labels {
   grid-template-columns: 1fr 3fr 4fr;
 }
+.processus .projet img {
+  display: none;
+}
 
 .technique .labels {
   grid-template-columns: 3fr 3fr 6fr;
@@ -2630,6 +2636,9 @@ a:hover {
   .rectangle {
     width: 250px;
   }
+  .processus .hover-image {
+    display: none;
+  }
   .processus .labels {
     display: grid;
     grid-template-columns: 2fr 3fr;
@@ -2643,6 +2652,19 @@ a:hover {
   }
   .processus .full__projet h3 {
     display: none;
+  }
+  .processus .full__projet .projet img {
+    display: block;
+    width: 100%;
+    grid-column: 1/-1;
+    aspect-ratio: 4/3;
+    padding-bottom: 30px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .processus .full__projet .projet p {
+    grid-column: 1/-1;
+    padding: 30px 0;
   }
   .technique .labels {
     display: grid;
